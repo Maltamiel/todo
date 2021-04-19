@@ -13,7 +13,10 @@ while True:
   userUnswer = input()
 
   if userUnswer == "add":
-    print("Работает ")
+    userDate = input("Введите дату:\n")
+    userTask = input("Что нужно сделать?")
+    todo[ userDate] = userTask
+    print(f" [ {userDate} ] - добавленная задача '{userTask}' ")
   elif userUnswer == "help":
     print(HELP) 
   elif userUnswer == "show":
