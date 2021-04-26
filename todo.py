@@ -15,6 +15,11 @@ while True:
   if userUnswer == "add":
     userDate = input("Введите дату:\n")
     userTask = input("Что нужно сделать?")
+
+    if userDate in todo.keys():
+      todo[ userDate ].append( userTask )
+    else:
+      todo[ userDate ] = ( userTask )
     todo[ userDate] = userTask
     print(f" [ {userDate} ] - добавленная задача '{userTask}' ")
   elif userUnswer == "help":
