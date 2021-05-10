@@ -20,13 +20,11 @@ def checkDate(date):
     print("Error")
     return False 
 
-print("Введите команду или help, для вывода доступных команд")
-
-while True:
-  userUnswer = input()
-
+def add(command, userAnswer):
   if userUnswer == "add":
     userDate = input("Введите дату:\n")
+    if checkDate (userDate) == False:
+      continue 
     userTask = input("Что нужно сделать?")
 
     if userDate in todo.keys():
@@ -35,6 +33,13 @@ while True:
       todo[ userDate ] = ( userTask )
     todo[ userDate] = userTask
     print(f" [ {userDate} ] - добавленная задача '{userTask}' ")
+
+print("Введите команду или help, для вывода доступных команд")
+
+while True:
+  userUnswer = input()
+
+  
   elif userUnswer == "help":
     print(HELP) 
   elif userUnswer == "show":
